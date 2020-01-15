@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <nav class="w3-bar w3-black">
+        <a id = "home" href="/index" class="w3-button w3-bar-item"> home</a>
+        <a id = "social" href="/social" class="w3-button w3-bar-item"> social</a>
+        <a id = "service" href="/service" class="w3-button w3-bar-item"> service</a>
+        <a id = "sporting" href="/sporting" class="w3-button w3-bar-item"> sporting</a>
+        <a id = "business" href="/business" class="w3-button w3-bar-item"> business</a>
+        <a id = "education" href="/education" class="w3-button w3-bar-item"> education</a>
+        <a id = "other" href="/other" class="w3-button w3-bar-item"> other</a>
+      </nav>
+      <h1>Community Events Board: Social Events</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} - {{event.event_type}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <form method="post" action="/results">
+    </body>
+</html>

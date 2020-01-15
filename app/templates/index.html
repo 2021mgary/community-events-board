@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <nav class="w3-bar w3-black">
+        <a id = "home" href="/index" class="w3-button w3-bar-item"> home</a>
+        <a id = "social" href="/social" class="w3-button w3-bar-item"> social</a>
+        <a id = "service" href="/service" class="w3-button w3-bar-item"> service</a>
+        <a id = "sporting" href="/sporting" class="w3-button w3-bar-item"> sporting</a>
+        <a id = "business" href="/business" class="w3-button w3-bar-item"> business</a>
+        <a id = "education" href="/education" class="w3-button w3-bar-item"> education</a>
+        <a id = "other" href="/other" class="w3-button w3-bar-item"> other</a>
+      </nav>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} - {{event.event_type}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- add a method post and an action (/results) -->
+      <form method="post" action="/results">
+        <!-- i need to ask for an event name and a data -->
+        <p>tell me your event name!</p>
+        <input type="text" name="event_name"/>
+        <br>
+        <p>tell me your event date!</p>
+        <input type="date" name="event_date"/>
+        <!-- i need to add a submit button -->
+        <br>
+        <p>tell me what type of event it is!</p>
+        <input type="radio" name="event_type" value="social"> social<br>
+        <input type="radio" name="event_type" value="service"> service<br>
+        <input type="radio" name="event_type" value="sporting"> sporting<br>
+        <input type="radio" name="event_type" value="business"> business<br>
+        <input type="radio" name="event_type" value="education"> education<br>
+        <input type="radio" name="event_type" value="other"> other<br>
+        <br>
+        <input type="submit" value="submit"/>
+        <!-- #create button for category
+        #create route to handle category button -->
+    </body>
+</html>
